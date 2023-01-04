@@ -7,10 +7,25 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol LoginViewDelegate: AnyObject {
+    func success()
+    func showError(error: UserError)
+}
+
+final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+    }
+}
+
+extension LoginViewController: LoginViewDelegate {
+    func success() {
+        
+    }
+    
+    func showError(error: UserError) {
+        
     }
 }
